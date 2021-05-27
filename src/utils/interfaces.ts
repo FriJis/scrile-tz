@@ -14,11 +14,11 @@ export interface ICompany {
     bs: string
 }
 export interface IPhoto {
-    albumId: number
+    albumId?: number
     id: number
-    title: string
+    title?: string
     url: string
-    thumbnailUrl: string
+    thumbnailUrl?: string
 }
 export interface IUser {
     readonly id: number

@@ -56,9 +56,10 @@ export default Vue.extend({
             !this.users.length ? this.getUsers() : ''
             this.show = true
         },
-        selecting({ name }: IUser): void {
-            this.field = name
+        selecting(u: IUser): void {
+            this.field = u.name
             this.show = false
+            this.$emit('selected', u)
         },
         async getUsers(): Promise<void> {
             this.loading = true

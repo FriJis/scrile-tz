@@ -1,21 +1,32 @@
 <template>
     <div class="content">
         <div class="content__inner">
-            <v-select></v-select>
+            <v-select @selected="(e) => selecting(e)"></v-select>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 import select from './components/select/index.vue'
+import { IUser } from './utils/interfaces'
 
-@Component({
+export default Vue.extend({
     components: {
         'v-select': select,
     },
+    data() {
+        return {
+            user: {},
+        }
+    },
+    methods: {
+        selecting(u: IUser) {
+            this.user = u
+            console.log(u)
+        },
+    },
 })
-export default class App extends Vue {}
 </script>
 
 <style lang="scss">
