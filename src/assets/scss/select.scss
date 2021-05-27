@@ -1,0 +1,74 @@
+.select {
+    $bg: #f9f9f9;
+    position: relative;
+    $paddings: 10px;
+    $imgZise: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    &__icon {
+        padding-right: $paddings;
+        display: flex;
+    }
+    &__field {
+        display: flex;
+        align-items: center;
+        background: $bg;
+        padding: $paddings;
+        border-radius: 6px 6px 0px 0px;
+        border-bottom: 1px solid #262626;
+
+        input {
+            outline: none;
+            border: 0;
+            padding: $paddings 0;
+        }
+    }
+    &__block {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: flex;
+        &-list {
+            flex-direction: column;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        &-loader {
+            height: 200px;
+            background: $bg;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__photo,
+    &__photo img {
+        width: $imgZise;
+        height: $imgZise;
+        border-radius: $imgZise;
+    }
+    &__info {
+        padding-left: 10px;
+    }
+    &__name {
+        font-size: 14px;
+    }
+    &__username {
+        color: gray;
+        font-size: 12px;
+    }
+    &__item {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        user-select: none;
+        background: $bg;
+        padding: 8px 16px;
+        border-radius: 0px 0px 8px 8px;
+
+        &:hover {
+            background: rgba(128, 128, 128, 0.103);
+        }
+    }
+}
